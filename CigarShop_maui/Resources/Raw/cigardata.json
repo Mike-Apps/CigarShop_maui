@@ -1,0 +1,47 @@
+﻿[
+  {
+    "Name": "ACID ",
+    "Location": "NickyRuagWa",
+    "Details": "Rich and.....flamable?  Cigars are gross. Acid cigars are made of Nicaraguan filler and binder tobaccos in wrapper leaves including Cameroon, Candela, Connecticut, Maduro, Natural, and Sumatra. These aromatic cigars are infused with the finest herbs and botanical essences, making them unique from other flavored cigars.",
+    "Image": "acid_cold_infusion.jpg",
+    "Cost": "$10.30",
+    "Inventory": 100,
+    "Latitude": -122.205924,
+    "Longitude": 47.730065
+  },
+
+  {
+    "Name": "Ashton",
+    "Location": "Dominician Republic",
+    "Details": "a world-class brand known for its consistency and high-end taste. Today, it is home to 7 distinctive top-rated blends: Ashton Classic, the 92-rated Ashton Aged Maduro, 91-rated Ashton Cabinet Selection, 94-rated Ashton ESG, 94-rated Ashton VSG, 94-Ashton Symmetry, and the 94-rated Ashton Heritage.",
+    "Image": "ashton_classic.png",
+    "Cost": "$90.30",
+    "Inventory": 100,
+    "Latitude": -122.205924,
+    "Longitude": 47.730065
+  },
+
+  {
+    "Name": "Arturo Fuente",
+    "Location": "Dominician Republic",
+    "Details": "Four generations of the Fuente family carry on a cigar-making heritage that began in Cuba in the 1800s. Modern Fuente family patriarch Carlito Fuente continues a legacy rivaled by few. The Fuente family is the leading producer of premium Dominican cigars in the world. A number of iconic Arturo Fuente cigars comprise the family’s portfolio, including Arturo Fuente Hemingway, Chateau Series, Don Carlos, Gran Reserva, and the ultra-rare Arturo Fuente Anejo and Fuente Fuente Opus X cigars. Arturo Fuente Hemingway is a 94-rated cornerstone in the company’s vast catalog of the best Dominican cigars you can smoke.",
+    "Image": "arturo_fuente.png",
+    "Cost": "$222.30",
+    "Inventory": 100,
+    "Latitude": -8.783195,
+    "Longitude": 34.508523
+  },
+
+  {
+    "Name": "Oliva",
+    "Location": "Nicaragu",
+    "Details": "a top-selling premium Nicaraguan brand thanks to a strong and steady stream of critical successes. In 2014, Oliva scored 96 points and Cigar Aficionado’s coveted ‘#1 Cigar of the Year’ title with Oliva Serie V Melanio. In 2017, the 95-rated Oliva Serie V took home the ‘#2 Cigar of the Year.’ You don’t have to look far to discover several celebrated gems in the brand’s lineup, including the 94-rated Oliva Serie O, 92-rated Master Blends 3, and the divine Oliva Monticello.",
+    "Image": "oliva_serie.png",
+    "Cost": "$22.30",
+    "Inventory": 100,
+    "Latitude": -8.783195,
+    "Longitude": 34.508523
+  }
+
+  
+]

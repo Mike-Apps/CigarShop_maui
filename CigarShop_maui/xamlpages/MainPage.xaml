@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CigarShop_maui.MainPage"
+             xmlns:model="clr-namespace:CigarShop_maui.Model"
+             xmlns:viewmodel="clr-namespace:CigarShop_maui.Views"
+             x:DataType="viewmodel:CigarViewModel"
+             BackgroundColor="LightGray">
+
+
+    <Grid
+        ColumnDefinitions="*,*"
+        ColumnSpacing="5"
+        RowDefinitions="*,Auto"
+        RowSpacing="0">
+        <CollectionView
+            Grid.ColumnSpan="2"
+            ItemsSource="{Binding cigarmodel}"
+            SelectionMode="None">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="model:CigarModel">
+                    <Grid Padding="10">
+                        <Frame HeightRequest="125" Style="{StaticResource CardView}">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer 
+                                        Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:CigarViewModel}}, Path=GoToDetailsCommand}"
+                                        CommandParameter="{Binding .}">
+                                </TapGestureRecognizer>
+                            </Frame.GestureRecognizers>
+                            <Grid Padding="0" ColumnDefinitions="145,*">
+                                <Image Aspect="AspectFill"  Source="{Binding Image}"
+                                       WidthRequest="145"
+                                       HeightRequest="125"/>
+                                <VerticalStackLayout
+                                    Grid.Column="1"
+                                    Padding="10">
+                                    <Label Style="{StaticResource LargeLabel}" Text="{Binding Name}" />
+                                    <Label Style="{StaticResource MediumLabel}" Text="{Binding Location}" />
+                                </VerticalStackLayout>
+                            </Grid>
+                        </Frame>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <Button Text="Get Cigars" 
+                Command="{Binding GetCigarsCommand}"
+                Grid.Row="1"
+                Grid.Column="0"
+                Style="{StaticResource ButtonOutline}"
+                Margin="8"/>
+
+    </Grid>
+</ContentPage>
+
+
+
