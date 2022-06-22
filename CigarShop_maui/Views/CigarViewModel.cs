@@ -3,44 +3,40 @@ using System.Collections.Generic;
 using System.Linq;
 using CommunityToolkit.Mvvm.Input;
 using CigarShop_maui.xamlpages;
+using Microsoft.Maui.Networking;
 
 
 namespace CigarShop_maui.Views
 {
     public partial class CigarViewModel : BaseViewModel
     {
+        public ObservableCollection<CigarModel> cigarmodel_observablecollection{ get; } = new();
         CigarServices cigarServices;
+
+  
+
         public CigarViewModel(CigarServices cigarServices)
         {
             //Title = "Cigar Shop";
             this.cigarServices = cigarServices;
+
         }
-
-        public ObservableCollection<CigarModel> cigarmodel { get; } = new();
-
-
 
         [ICommand]
         async Task GetCigarsAsync()
         {
-            //if (IsBusy)
-            //{
-            //    return;
-            //}
-
             try
             {
-                //IsBusy = true;
                 var cigars = await cigarServices.GetCigars();
 
-                if (cigarmodel.Count != 0)
+                if (cigarmodel_observablecollection.Count != 0)
                 {
-                    cigarmodel.Clear();
+                    cigarmodel_observablecollection.Clear();
                 }
                 
                 foreach (var cigar in cigars)
                 {
-                    cigarmodel.Add(cigar);
+                    cigarmodel_observablecollection.Add(cigar);
                 }
             }
             catch (Exception ex)
@@ -49,9 +45,6 @@ namespace CigarShop_maui.Views
             }
             finally
             {
-                //IsBusy = false;
-              
-               
             }
         }
 
@@ -59,6 +52,8 @@ namespace CigarShop_maui.Views
         [ICommand]
         async Task GoToDetails(CigarModel cigarModel)
         {
+
+
             if (cigarModel is null)
             {
                 return;
@@ -68,6 +63,7 @@ namespace CigarShop_maui.Views
         {
             {"CigarModel", cigarModel }
         });
+
 
         }
     }

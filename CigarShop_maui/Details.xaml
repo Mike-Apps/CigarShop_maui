@@ -35,6 +35,9 @@
                         WidthRequest="160"/>
                 </Frame>
             </Grid>
+            
+            <Button Text="Map" Command="{Binding OpenMapCommand}" WidthRequest="100" HorizontalOptions="Center" Style="{StaticResource ButtonOutline}"></Button>
+            
             <VerticalStackLayout Padding="10" Spacing="10">
                 <Label Style="{StaticResource MediumLabel}" Text="{Binding CigarModel.Details}" />
                 <Label Style="{StaticResource MicroLabel}" Text="{Binding CigarModel.Location, StringFormat='Location: {0}'}" />

@@ -7,7 +7,6 @@
              x:DataType="viewmodel:CigarViewModel"
              BackgroundColor="LightGray">
 
-
     <Grid
         ColumnDefinitions="*,*"
         ColumnSpacing="5"
@@ -15,7 +14,7 @@
         RowSpacing="0">
         <CollectionView
             Grid.ColumnSpan="2"
-            ItemsSource="{Binding cigarmodel}"
+            ItemsSource="{Binding cigarmodel_observablecollection}"
             SelectionMode="None">
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="model:CigarModel">

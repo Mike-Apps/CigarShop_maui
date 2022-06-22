@@ -8,7 +8,7 @@ public partial class AppShell : Shell
 	{
 		InitializeComponent();
 
-        Routing.RegisterRoute(nameof(Details), typeof(Details));
+        Routing.RegisterRoute("Details", typeof(Details));
         
 	}
 }
