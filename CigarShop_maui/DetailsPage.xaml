@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:viewmodel="clr-namespace:CigarShop_maui.Views"
-             x:DataType="viewmodel:CigarDetailsViewModel"
-             Shell.PresentationMode="Modal"
-             x:Class="CigarShop_maui.xamlpages.Details"
-             Title="Details">
+             x:Class="CigarShop_maui.DetailsPage"
+             Title="DetailsPage">
 
     <ScrollView>
         <VerticalStackLayout>
@@ -35,9 +32,9 @@
                         WidthRequest="160"/>
                 </Frame>
             </Grid>
-            
-            <Button Text="Map" Command="{Binding OpenMapCommand}" WidthRequest="100" HorizontalOptions="Center" Style="{StaticResource ButtonOutline}"></Button>
-            
+
+            <Button Text="Map" Command="{Binding OpenMapCommand}" Margin="0,10,0,5" WidthRequest="100" HorizontalOptions="Center" Style="{StaticResource ButtonOutline}"></Button>
+
             <VerticalStackLayout Padding="10" Spacing="10">
                 <Label Style="{StaticResource MediumLabel}" Text="{Binding CigarModel.Details}" />
                 <Label Style="{StaticResource MicroLabel}" Text="{Binding CigarModel.Location, StringFormat='Location: {0}'}" />
@@ -47,9 +44,6 @@
             </VerticalStackLayout>
         </VerticalStackLayout>
     </ScrollView>
-
-
-
 
 
 </ContentPage>

@@ -1,22 +1,17 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 
 namespace CigarShop_maui.Views
 {
     public partial class BaseViewModel : ObservableObject
     {
-        // [ObservableProperty]
+        [ObservableProperty]
         // [NotifyPropertyChangedFor(nameof(IsNotBusy))]
-        // bool isBusy;
+        bool isBusy;
 
         [ObservableProperty]
         string title;
 
-        //public bool IsNotBusy => !IsBusy;
+        public bool IsNotBusy => !IsBusy;
 
     }
 }

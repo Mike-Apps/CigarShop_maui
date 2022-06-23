@@ -23,6 +23,9 @@ public static class MauiProgram
 		builder.Services.AddTransient<CigarDetailsViewModel>();
 		builder.Services.AddTransient<Details>();
 
+        //testpage
+        builder.Services.AddTransient<DetailsPage>();
+
         return builder.Build();
 	}
 }

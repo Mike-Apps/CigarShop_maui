@@ -13,7 +13,6 @@ namespace CigarShop_maui.Views
         public ObservableCollection<CigarModel> cigarmodel_observablecollection{ get; } = new();
         CigarServices cigarServices;
 
-  
 
         public CigarViewModel(CigarServices cigarServices)
         {
@@ -22,18 +21,32 @@ namespace CigarShop_maui.Views
 
         }
 
+        [ObservableProperty]
+        bool isRefreshing;
+
         [ICommand]
         async Task GetCigarsAsync()
         {
+            if (IsBusy)
+                return;
+
             try
             {
+                //if (connectivity.NetworkAccess != NetworkAccess.Internet)
+                //{
+                //    await Shell.Current.DisplayAlert("No connectivity!",
+                //        $"Please check internet and try again.", "OK");
+                //    return;
+                //}
+
+                IsBusy = true;
                 var cigars = await cigarServices.GetCigars();
 
                 if (cigarmodel_observablecollection.Count != 0)
                 {
                     cigarmodel_observablecollection.Clear();
                 }
-                
+
                 foreach (var cigar in cigars)
                 {
                     cigarmodel_observablecollection.Add(cigar);
@@ -45,6 +58,8 @@ namespace CigarShop_maui.Views
             }
             finally
             {
+                IsBusy = false;
+                IsRefreshing = false;
             }
         }
 
@@ -52,19 +67,25 @@ namespace CigarShop_maui.Views
         [ICommand]
         async Task GoToDetails(CigarModel cigarModel)
         {
-
-
-            if (cigarModel is null)
-            {
+            if (cigarModel == null)
                 return;
-            }
 
-            await Shell.Current.GoToAsync(nameof(Details), true, new Dictionary<string, object>
+            await Shell.Current.GoToAsync(nameof(DetailsPage), true, new Dictionary<string, object>
         {
             {"CigarModel", cigarModel }
         });
-
-
         }
+
+        //test pages
+
+        //[ICommand]
+        //async Task GoToTestPage()
+        //{
+
+
+        //    await Shell.Current.GoToAsync(nameof(TestPage));
+        
+  
+        //}
     }
 }

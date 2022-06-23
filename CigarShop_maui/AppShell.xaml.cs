@@ -1,5 +1,5 @@
 ﻿namespace CigarShop_maui;
-using CigarShop_maui.xamlpages;
+
 
 
 public partial class AppShell : Shell
@@ -8,7 +8,11 @@ public partial class AppShell : Shell
 	{
 		InitializeComponent();
 
-        Routing.RegisterRoute("Details", typeof(Details));
-        
-	}
+        //Routing.RegisterRoute(nameof(Details), typeof(Details));
+
+        //Testpage
+
+        Routing.RegisterRoute(nameof(DetailsPage), typeof(DetailsPage)) ;
+
+    }
 }
