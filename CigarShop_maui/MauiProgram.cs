@@ -21,8 +21,14 @@ public static class MauiProgram
         builder.Services.AddSingleton<MainPage>();
 
 		builder.Services.AddTransient<CigarDetailsViewModel>();
-
         builder.Services.AddTransient<DetailsPage>();
+
+		//sensors & Interfaces
+
+		builder.Services.AddSingleton<IConnectivity>(Connectivity.Current);
+        builder.Services.AddSingleton<IGeolocation>(Geolocation.Default);
+        builder.Services.AddSingleton<IMap>(Map.Default);
+
 
         return builder.Build();
 	}
