@@ -1,7 +1,7 @@
 ﻿namespace CigarShop_maui;
 using CigarShop_maui.Services;
 using CigarShop_maui.Views;
-using CigarShop_maui.xamlpages;
+
 
 public static class MauiProgram
 {
@@ -21,9 +21,7 @@ public static class MauiProgram
         builder.Services.AddSingleton<MainPage>();
 
 		builder.Services.AddTransient<CigarDetailsViewModel>();
-		builder.Services.AddTransient<Details>();
 
-        //testpage
         builder.Services.AddTransient<DetailsPage>();
 
         return builder.Build();

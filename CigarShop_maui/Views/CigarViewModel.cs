@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using CommunityToolkit.Mvvm.Input;
-using CigarShop_maui.xamlpages;
-using Microsoft.Maui.Networking;
-
-
+﻿
 namespace CigarShop_maui.Views
 {
     public partial class CigarViewModel : BaseViewModel
@@ -18,7 +11,6 @@ namespace CigarShop_maui.Views
         {
             //Title = "Cigar Shop";
             this.cigarServices = cigarServices;
-
         }
 
         [ObservableProperty]
@@ -76,16 +68,5 @@ namespace CigarShop_maui.Views
         });
         }
 
-        //test pages
-
-        //[ICommand]
-        //async Task GoToTestPage()
-        //{
-
-
-        //    await Shell.Current.GoToAsync(nameof(TestPage));
-        
-  
-        //}
     }
 }

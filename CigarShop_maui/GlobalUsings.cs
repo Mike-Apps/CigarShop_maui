@@ -12,4 +12,3 @@ global using System.Threading.Tasks;
 global using CigarShop_maui.Services;
 global using Microsoft.Maui.Networking;
 global using System.Windows.Input;
-global using CigarShop_maui.xamlpages;
